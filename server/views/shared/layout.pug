@@ -1,0 +1,53 @@
+doctype
+html
+head
+	title Title
+	link(rel="stylesheet" href="../lib/bootstrap/css/bootstrap.min.css")
+	link(rel="stylesheet" href="../lib/bootstrap/css/bootstrap-select.min.css")
+	
+	link(rel="stylesheet" href="../css/site.css")
+	link(rel="stylesheet" href="../css/app.css")
+body
+.wrappar
+	header.nav
+		a(href="/")
+		img.logo-head(src="../img/logo.png")
+		nav.navbar.navbar-default
+			.container-fluid
+				.navbar-header
+					a.navbar-brand(href="/") 
+						img.logo(src="../img/logo.png")
+				ul.nav.navbar-nav
+					li
+						a(href="/") Home
+					li
+						a(href="/pets") All Pets
+					li
+						a(href="/hotels") All Hotels
+					if (user)
+						li
+							a(href="/pet/register") Add pet
+						li
+							a(href="/hotel/register") Add hotel
+				ul.nav.navbar-nav.navbar-right
+					if (user)
+						li
+							a(href="/auth/profile") #{user.username}
+						li
+							a(href="/auth/logout") Logout
+					if (!user)
+						li
+							a(href="/auth/register") Register
+						li
+							a(href="/auth/login") Login
+
+	.container
+		if (errorMessage)
+			.alert.alert-danger #{errorMessage}
+
+		block main-content
+
+	footer.footer
+		p footeeeer
+
+	include scripts

@@ -1,0 +1,13 @@
+extends ../shared/layout
+
+block main-content
+    if model
+        ul.list-group
+            li.list-group-item-success Name:   
+                span= model.name 
+            li.list-group-item-info Address:   
+                span= model.address
+            li.list-group-item-warning Phone Number:   
+                span= model.phoneNumber
+            li.list-group-item-danger Specie:   
+                span= model.species

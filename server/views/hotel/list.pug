@@ -1,0 +1,11 @@
+extends ../shared/layout
+
+block main-content
+    | Total count of hotels:   
+    span.float-xs-right= model.length
+
+    ul.list-group
+        each hotel in model
+            li
+                br
+                a.btn.btn-success(href="/hotels/" + hotel.id)= hotel.name
