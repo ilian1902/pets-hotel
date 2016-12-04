@@ -10,11 +10,11 @@ module.exports = {
     development: {
         rootPath: rootPath,
         db: connectionStrings.development,
-        port: 3001
+        port: process.env.PORT || 3001
     },
     production: {
         rootPath: rootPath,
-        db: connectionStrings[process.env.NODE_ENV || 'development'],
+        db: connectionStrings.production,
         port: process.env.PORT || 3001
     }
 };

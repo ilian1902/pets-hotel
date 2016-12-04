@@ -10,7 +10,7 @@ console.log(rootPath);
 
 // app.use('/myroute', myRoute);
 
-const env = process.env.NODE_ENV || 'production';
+const env = process.env.NODE_ENV || 'development';
 const config = require('./config')[env];
 const databaseConfig = require('./database-config')
 const expressConfig = require('./express-config');
