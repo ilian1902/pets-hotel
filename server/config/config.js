@@ -8,13 +8,15 @@ const connectionStrings = {
 
 module.exports = {
     development: {
+        environment: process.env.NODE_ENV || 'development',
         rootPath: rootPath,
-        db: connectionStrings.development,
+        db: connectionStrings[process.env.NODE_ENV || 'development'],
         port: process.env.PORT || 3001
     },
     production: {
+        environment: process.env.NODE_ENV || 'development',
         rootPath: rootPath,
-        db: connectionStrings.production,
+        db: connectionStrings[process.env.NODE_ENV || 'development'],
         port: process.env.PORT || 3001
     }
 };
