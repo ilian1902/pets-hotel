@@ -14,7 +14,7 @@ module.exports = {
     },
     production: {
         rootPath: rootPath,
-        db: connectionStrings.production,
+        db: connectionStrings[process.env.NODE_ENV || 'development'],
         port: process.env.PORT || 3001
     }
 };
